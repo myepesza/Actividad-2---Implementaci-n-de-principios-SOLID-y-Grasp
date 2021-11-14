@@ -72,3 +72,4 @@ class Rectangulo {
       super(lado, lado);
     }
   }
+
