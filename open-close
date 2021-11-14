@@ -1,0 +1,16 @@
+//Principios SOLID en JavaScript
+//Alumnos: Maycol Yepes y Alejandro Castilla
+//Actividad 2 - Implementación de principios SOLID y Grasp
+//Principio de abierto-cerrado
+
+class Mercadodespensa {
+    mercados = ["Arroz", "Aceite", "Carne", "Jugo"];
+
+    existemercado (mercado) {
+        return this.mercados.indexOf(mercado) !== -1;
+    }
+
+    agregarmercado(mercado) {
+        this.mercados.push(mercado);
+    }
+}
