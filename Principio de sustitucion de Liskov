@@ -1,0 +1,74 @@
+//Principios SOLID en JavaScript
+//Alumnos: Maycol Yepes y Alejandro Castilla
+//Actividad 2 - Implementación de principios SOLID y Grasp
+//Principio de sustitucion de Lisov
+
+class Rectangulo {
+    ancho;
+    alto;
+  
+    establecerAncho(ancho) {
+      this.ancho = ancho;
+    }
+  
+    establecerAlto(alto) {
+      this.alto = alto;
+    }
+  
+    calcularArea() {
+      return ancho * alto;
+    }
+  }
+
+  describe("Validar área de un rectángulo ", function () {
+    it("El área debe ser igual a alto * ancho ", function () {
+      const rectangulo = new Rectangulo();
+      rectangulo.establecerAncho(8);
+      rectangulo.establecerAlto(2);
+      const area = rectangulo.calcularArea();
+      assert.equal(area, 16);
+    });
+  });
+
+  class Cuadrado extends Rectangulo {
+    establecerAncho(ancho) {
+      super.establecerAncho(ancho);
+      super.establecerAlto(ancho);
+    }
+  
+    establecerAlto(alto) {
+      super.establecerAncho(alto);
+      super.establecerAlto(alto);
+    }
+  }
+
+  class Paralelogramo {
+    constructor(ancho, alto) {
+      this.establecerAncho(ancho);
+      this.establecerAlto(alto);
+    }
+  
+    establecerAncho(ancho) {
+      this.ancho = ancho;
+    }
+  
+    establecerAlto(alto) {
+      this.alto = alto;
+    }
+  
+    calcularArea() {
+      return this.ancho * this.alto;
+    }
+  }
+  
+  class Rectangulo extends Paralelogramo {
+    constructor(ancho, alto) {
+      super(ancho, alto);
+    }
+  }
+  
+  class Cuadrado extends Paralelogramo {
+    constructor(lado) {
+      super(lado, lado);
+    }
+  }
