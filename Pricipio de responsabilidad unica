@@ -11,8 +11,10 @@ class Coche {
         return this.marca;
         
     }
+    
+    class CocheDB{
 
-    guardarmarca(marca){
+    guardarmarca(marca)
         this.marca = marca;
     }
 }
