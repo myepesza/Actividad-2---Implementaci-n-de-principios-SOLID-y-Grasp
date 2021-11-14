@@ -1,20 +1,17 @@
-#Principio SOLID: Principio de responsabilidad
-#Alumnos: Maycol Yepes y Alejandro Castilla
-#Principio de la responsabilidad unica
+//Principio SOLID: Principio de responsabilidad
+//Alumnos: Maycol Yepes y Alejandro Castilla
+//Principio de responsabilidad unica
 
-class Coche:
-    def __init__(self, name: str):
-            self.name = name
-    
-    def get_name(self):
-        pass
+class Coche {
+    construtor(marca){
+        this.marca = marca;
+    }
 
+    obtenermarca(){
+        return this.marca;
+    }
 
-class CocheDB:
-    def get_user(self, id) -> Coche:
-        pass
-
-    def save(self, Coche: Coche):
-        pass
-
-staticmethod: return
+    guardarmarca(marca){
+        this.marca = marca;
+    }
+}
